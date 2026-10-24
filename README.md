@@ -83,52 +83,52 @@ Estudie del [tutorial de referencia](https://www.learncpp.com/) en la asignatura
 - El identificador de una función debe reflejar claramente lo que la función hace 
 
 1. Escriba un programa `function-example.cc` que incluya una función C++ que realice el cálculo de la siguiente función matemática de tres variables:
-
-$$g\left(x,y,t\right)=\frac{\sqrt{2t-4}}{x^2-y^2}$$
-
-La entrada del programa serán los valores de $x,y,z$ y devolverá la salida de evaluar la función $g(x,y,z)$.
-
-```
-Public test cases
-Input         Output
-3 4 5         -0.349927
-4.0 1.0 7.0    0.210819
-1 2 3         -0.471405
-3 2 10.0       0.8
-```
+    
+    $$g\left(x,y,t\right)=\displaystyle\frac{\sqrt{2t-4}}{x^2-y^2}$$
+    
+    La entrada del programa serán los valores de $x,y,z$ y devolverá la salida de evaluar la función $g(x,y,z)$.
+    
+    ```
+    Public test cases
+    Input         Output
+    3 4 5         -0.349927
+    4.0 1.0 7.0    0.210819
+    1 2 3         -0.471405
+    3 2 10.0       0.8
+    ```
 
 2. Escriba un programa `change-case.cc`que tome como entrada una cadena de caracteres sin espacios e imprima como salida la misma cadena, convirtiendo los caracteres que sean letras mayúsculas a minúsculas y viceversa. Los caracteres que no sean letras mayúsculas ni minúsculas deberán permanecer inalterados. Desarrolle su programa de forma que incluya como mínimo dos funciones y realice un diseño tal que el programa se organice en más de un fichero de código fuente (`*.cc`).
-
-```
-Public test cases
-Input        Output
-Abecedario   aBECEDARIO
-PyThon       pYtHON
-AlFa2022     aLfA2022
-```
+    
+    ```
+    Public test cases
+    Input        Output
+    Abecedario   aBECEDARIO
+    PyThon       pYtHON
+    AlFa2022     aLfA2022
+    ```
 
 3. Desarrolle un programa `random_numbers.cc` que tome como entrada dos números naturales *n* y *m* tales que *n < m* y genere un número aleatorio real *r* en el intervalo *[n, m]*.
-
-Desarrolle su programa de modo que incluya al menos dos funciones, y que sea una de ellas la que tome como parámetros los dos números introducidos por el usuario y devuelva como resultado el número aleatorio. Para generar números aleatorios en C++, consulte la documentación de la función [`std::rand`](https://en.cppreference.com/w/cpp/numeric/random/rand).
+    
+    Desarrolle su programa de modo que incluya al menos dos funciones, y que sea una de ellas la que tome como parámetros los dos números introducidos por el usuario y devuelva como resultado el número aleatorio. Para generar números aleatorios en C++, consulte la documentación de la función [`std::rand`](https://en.cppreference.com/w/cpp/numeric/random/rand).
  
 4. Estudie el programa `floating-point-arithmetics.cc` que se incluye en [el directorio raíz del repositorio de esta práctica](https://github.com/ULL-IB/P08-functions/tree/main). Ese programa define una constante de tipo `double` cuyo valor debería coincidir con el de cierto cálculo. Si se imprimen ambos valores por separado, aparentemente son iguales, pero si se comparan en una sentencia condicional, ésta resulta ser falsa. Este comportamiento se debe a la imprecisión que introduce la representación de los números en punto flotante en un ordenador. Para profundizar en este fenómeno, estudie el artículo [Problem in comparing Floating point numbers and how to compare them correctly?](https://www.geeksforgeeks.org/problem-in-comparing-floating-point-numbers-and-how-to-compare-them-correctly/)
-
-Desarrolle a continuación una función cuya definición sea:
-
-``` .cpp
-bool AreEqual(double number1, double number2, const double epsilon = 1e-7);
-```
-que devuelva `true` o `false` dependiendo de si los números que se le pasan como parámetro son aproximadamente iguales o no. El tercer parámetro, que por defecto vale $10^{-7}$, indica un valor muy pequeño que la función tomaría como margen de error a la hora de considerar si los números son o no iguales. [Este artículo](https://www.tutorialspoint.com/floating-point-comparison-in-cplusplus) de *Tutorials Point* o [esta entrada](https://stackoverflow.com/questions/17333/what-is-the-most-effective-way-for-float-and-double-comparison/253874#253874) de *StackOverflow* podrían resultarle útiles para desarrollar la función. Pruebe el comportamiento de su función con diferentes pares de valores como entrada o dando otros valores al parámetro `epsilon`.
+    
+    Desarrolle a continuación una función cuya definición sea:
+    
+    ``` .cpp
+    bool AreEqual(double number1, double number2, const double epsilon = 1e-7);
+    ```
+    que devuelva `true` o `false` dependiendo de si los números que se le pasan como parámetro son aproximadamente iguales o no. El tercer parámetro, que por defecto vale $10^{-7}$, indica un valor muy pequeño que la función tomaría como margen de error a la hora de considerar si los números son o no iguales. [Este artículo](https://www.tutorialspoint.com/floating-point-comparison-in-cplusplus) de *Tutorials Point* o [esta entrada](https://stackoverflow.com/questions/17333/what-is-the-most-effective-way-for-float-and-double-comparison/253874#253874) de *StackOverflow* podrían resultarle útiles para desarrollar la función. Pruebe el comportamiento de su función con diferentes pares de valores como entrada o dando otros valores al parámetro `epsilon`.
 
 5. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de un triángulo y calcule su área utilizando la [Fórmula de Herón](https://en.wikipedia.org/wiki/Heron%27s_formula). Diseñe una función cuyo nombre sea *Area*, que implemente ese cálculo.
-
-Los tres lados del triángulo, `a`, `b`, `c` deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos. Diseñe una función *IsAValidTriangle* que determine si los lados introducidos por el usuario forman un triángulo válido o no, y sólo calcule su área en caso de ser válido
-
-```
-Public test cases
-Input         Output
-5 5 5         10.82
-3 4 6         5.33
-3.9 6.0 1.2   Not a valid Triangle
-1.9 2 2       1.67
-```
+    
+    Los tres lados del triángulo, `a`, `b`, `c` deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos. Diseñe una función *IsAValidTriangle* que determine si los lados introducidos por el usuario forman un triángulo válido o no, y sólo calcule su área en caso de ser válido
+    
+    ```
+    Public test cases
+    Input         Output
+    5 5 5         10.82
+    3 4 6         5.33
+    3.9 6.0 1.2   Not a valid Triangle
+    1.9 2 2       1.67
+    ```
